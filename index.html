@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Your Sky</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- jQuery Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Greensock -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js"></script>
+    <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=oqTXERqt1KkFysAggSis~9y0W38S06OrMsWCbZ1slig~AjT8Gb19qNREAyi1d8lM9qo1Oxha0Z5tT5WeYfnTjF8jZMUYmRaLJCqFKjRdTvEl&callback=loadMapScenario' async defer></script>
+
+  </head>
+
+
+
+  <body onload="loadMapScenario();">
+
+    <div class="display">
+        <h2 class="yoursky">YOUR SKY</h2>
+        <h2 class="darksky">DARK SKY</h2>
+        <div class="SQMinfo">
+            
+            <p class="SQMinfotext" id="sqmValue"></p>
+            <p class="SQMinfotext" id="bortleValue"></p>
+        </div>
+        <div class="info"><span class="infotooltip">
+            This app uses Bing Maps and data from a variety of sources including NASA's VIIRS and World Atlas 2015 all courtesy of Jurij Stare's <a href="https://www.lightpollutionmap.info">www.lightpollutionmap.info</a>
+            <br>Site designed and built by Israel Blennerhassett, Joanne Jimenez and Justin Evans under commission for the River Murray Dark Sky Reserve through Torrens University Australia. 
+            Photo by Dave Hartley. <br>
+            © 2022 Microsoft Corporation <br>
+            © 2022 TomTom
+        </span></div>
+        <div class="container">
+            <div class="foreground"></div>
+            <div class="image-container">
+                
+                <div class="overlay slider-image"></div>
+            </div>
+            <input type="range" min="0" max="100" value="50" aria-label="Percentage of before photo shown" class="slider"/>
+            <div class="slider-line" aria-hidden="true"></div>
+            <div class="slider-button" aria-hidden="true">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                >
+                    <rect width="256" height="256" fill="none"></rect>
+                    <line
+                    x1="128"
+                    y1="40"
+                    x2="128"
+                    y2="216"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="16"
+                    ></line>
+                    <line
+                    x1="96"
+                    y1="128"
+                    x2="16"
+                    y2="128"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="16"
+                    ></line>
+                    <polyline
+                    points="48 160 16 128 48 96"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="16"
+                    ></polyline>
+                    <line
+                    x1="160"
+                    y1="128"
+                    x2="240"
+                    y2="128"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="16"
+                    ></line>
+                    <polyline
+                    points="208 96 240 128 208 160"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="16"
+                    ></polyline>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="search" id="searchBoxContainer">
+            <div class="searchprompt"><p>See how the effects of light pollution on <b>your sky</b> compare to the <a target="_blank" href="https://www.rivermurraydarkskyreserve.org/">Murry River International Dark Sky Reserve</a></p></div>
+            <div class="searchbar" >
+                <input class="textinput" id="searchBox" type="text" placeholder="Search for a city or address...">
+                <button class="searchbtn" onclick="search()"><p>Search</p><img src="media/search.png"></button>
+            </div>
+        </div>
+        <hr>
+        <div class="learnmore">
+            <div class="about"><p>Light pollution caused by poor management of outdoor lighting can be easily avoided. Find out more about the River Murry International Dark Sky Reserve and how to protect your night sky today.</p></div>
+            <button class="learnmorebtn" onclick="window.location.href=`https://www.rivermurraydarkskyreserve.org/`;">Learn More<img src="media/rightarrow.png"></button>
+        </div>
+        <!-- <button class="expand"><h2>• • •</h2></button> -->
+    </div>
+
+
+    <!-- To be expanded on...? -->
+    <!-- <div class="advanced">
+        <div class="presets">
+            <div class="buttonwrapper">
+                <button class="city sydney">Sydney</button>
+            </div>
+            <div class="buttonwrapper">
+                <button class="city melbourne">Melbourne</button>
+            </div>
+            <div class="buttonwrapper">
+                <button class="city adelaide">Adelaide</button>
+            </div>
+            <div class="buttonwrapper">
+                <button class="city paris">Paris</button>
+            </div>
+            <div class="buttonwrapper">
+                <button class="city newyork">New York</button>
+            </div>
+            <div class="buttonwrapper">
+                <button class="city singapore">Singapore</button>
+            </div>
+        </div>
+        <div class="levels">
+        </div>
+    </div> -->
+
+    <script src="app.js"></script>
+ 
+  </body>
+
+</html>
