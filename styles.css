@@ -69,7 +69,64 @@ body{
     max-width: 100vw;
 }
 
+.splashScreen {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(61, 61, 61);
+    z-index: 99;
+    max-width: 60%;
+    max-height: 80%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+}
 
+.splashScreen h1 {
+    padding: 10px;
+    font-size: 36px;
+    color: white;
+}
+
+.splashScreen p {
+    font-size: 18px;
+    padding: 10px;
+    color: #000000;
+}
+
+.splashScreen button {
+    width: 300px;
+    border-radius: 20px;
+    font-size: 24px;
+    padding: 10px;
+    margin: 15px;
+    cursor: pointer;
+}
+
+.blur {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 98;
+    backdrop-filter: blur(5px);
+}
+
+.fade-out {
+    transition: opacity 1.5s ease-in-out;
+    opacity: 0;
+}
+
+.slide-out {
+    transition: top 1.5s ease-in-out;
+    top: -100%;
+}
+
+#searchBox {
+    height: 20px;
+}
 
 /*  DISPLAY  ---------------------------------------------------------------------------------------------------------------------*/
 
