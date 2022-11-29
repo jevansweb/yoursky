@@ -133,7 +133,7 @@ body{
 .display{
     width: 100%;
     height: calc(100vh - 130px);
-    background-image: url("media/upscaledmeldanda.png");
+    background-image: url("media/compressed.png");
     background-size: cover;
     display: grid;
     place-items: center;
