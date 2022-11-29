@@ -76,7 +76,7 @@ body{
 .display{
     width: 100%;
     height: calc(100vh - 130px);
-    background-image: url("media/upscaledmeldanda.png");
+    background-image: url("media/compressedimage.png");
     background-size: cover;
     display: grid;
     place-items: center;
@@ -388,6 +388,72 @@ li p {
 #as_containerSearch_searchBox {
     position: absolute;
     top: -290px;
+}
+
+#searchBox {
+    height: 20px;
+}
+
+
+.blur {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 98;
+    backdrop-filter: blur(5px);
+}
+
+.splashscreen {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(71, 71, 71);
+    z-index: 99;
+    min-height: 300px;
+    min-width: 500px;
+    max-width: 60%;
+    max-height: 80%;
+    border-radius: 20px;
+    text-align: center;
+    padding: 10px;
+    opacity: 0.9;
+    
+}
+
+.splashscreen h1 {
+    padding: 10px;
+    
+    color: white;
+    font-weight: 900;
+}
+
+.splashscreen p {
+    color: black;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.splashscreen button {
+    padding: 10px;
+    margin: 15px;
+    font-size: 20px;
+    width: 300px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slide-off {
+    
+    transition: top 2s ease-in-out;
+    top: -100%
 }
 
 
