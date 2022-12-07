@@ -499,7 +499,7 @@ li p {
         min-height: 100%;
         margin: 0;
         width: 100vw;
-        overflow: hidden;
+        overflow: auto;
     }    
 
     .footer{
@@ -641,7 +641,9 @@ li p {
         opacity: 0.8;
     }
 
-    
+    .splashScreen {
+        padding: 20px;
+    }
 
     
 }
