@@ -640,8 +640,12 @@ li p {
     }
 
     .splashScreen {
-        width: 100%;
-        border-radius: 0px;
+        position: absolute;
+        background-color: rgb(61, 61, 61);
+        z-index: 99;
+        text-align: center;
+        padding: 30px;
         height: 100%;
+        width: 100%;
     }
 }
