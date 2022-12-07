@@ -641,11 +641,17 @@ li p {
 
     .splashScreen {
         position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
         background-color: rgb(61, 61, 61);
         z-index: 99;
+        max-width: 100%;
+        max-height: 100%;
         text-align: center;
         padding: 30px;
-        height: 100%;
-        width: 100%;
+        border-radius: 0px;
+        box-shadow: 0 0px 100px black;
     }
 }
