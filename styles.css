@@ -85,6 +85,8 @@ body{
     box-shadow: 0 4px 100px black;
 }
 
+
+
 .splashScreen h1 {
     font-family: 'Helvetica';
     padding: 10px;
@@ -638,7 +640,8 @@ li p {
     }
 
     .splashScreen {
-        max-width: 90vw;
-        max-height: 90vh;
+        width: 100%;
+        border-radius: 0px;
+        height: 100%;
     }
 }
