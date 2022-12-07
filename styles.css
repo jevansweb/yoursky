@@ -658,4 +658,8 @@ li p {
         border-radius: 0px;
         box-shadow: 0 0px 100px black;
     }
+
+    #splashButton {
+        z-index: 99.9999!important;
+    }
 }
