@@ -123,28 +123,28 @@ function addInfo() {
 
   if (SQM <= 22 && SQM > 21.99) {
     document.getElementById("bortleValue").innerHTML =
-      "Bortle: Class 1 - Excellent Dark Sky";
+      "Bortle Class: 1 <hr> Excellent Dark Sky";
   } else if (SQM <= 21.99 && SQM > 21.89) {
     document.getElementById("bortleValue").innerHTML =
-      "Bortle: Class 2 - Average Dark Sky";
+      "Bortle Class: 2 <hr> Average Dark Sky";
   } else if (SQM <= 21.89 && SQM > 21.69) {
     document.getElementById("bortleValue").innerHTML =
-      "Bortle: Class 3 - Rural Sky";
+      "Bortle Class: 3 <hr> Rural Sky";
   } else if (SQM <= 21.69 && SQM > 20.49) {
     document.getElementById("bortleValue").innerHTML =
-      "Bortle: Class 4 - Rural/Suburban Transition";
+      "Bortle Class: 4 <hr> Rural/Suburban Transition";
   } else if (SQM <= 20.49 && SQM > 19.5) {
     document.getElementById("bortleValue").innerHTML =
-      "Bortle: Class 5 - Suburban";
+      "Bortle Class: 5 <hr> Suburban";
   } else if (SQM <= 19.5 && SQM > 18.94) {
     document.getElementById("bortleValue").innerHTML =
-      "Bortle: Class 6 - Bright Suburban";
+      "Bortle Class: 6 <hr> Bright Suburban";
   } else if (SQM <= 18.94 && SQM > 18.38) {
     document.getElementById("bortleValue").innerHTML =
-      "Bortle: Class 7 - Suburban/Urban Transition";
+      "Bortle Class: 7 <hr> Suburban/Urban Transition";
   } else {
     document.getElementById("bortleValue").innerHTML =
-      "Bortle: Class 8 - City Sky";
+      "Bortle Class: 8 <hr> City Sky";
   }
 
   document.getElementById("sqmValue").innerHTML = `SQM: ${SQM}`;
