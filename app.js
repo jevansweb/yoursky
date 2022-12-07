@@ -28,6 +28,7 @@ function loadMapScenario() {
     );
   });
   function selectedSuggestion(suggestionResult) {
+
     let coordinates = `${suggestionResult.location.longitude},${suggestionResult.location.latitude}`;
     console.log(coordinates);
 
@@ -41,7 +42,7 @@ function loadMapScenario() {
       return SQM;
     };
 
-    // Making sure SQM mesurement doesn't go out of bounds in rare circumstances
+
     getData().then((SQM) => {
       if (SQM < 18) {
         sqm = 18;
@@ -55,7 +56,6 @@ function loadMapScenario() {
     });
   }
 }
-
 
 
 // Set defult light pollution level
@@ -134,7 +134,10 @@ function addInfo() {
   }
 
   document.getElementById("sqmValue").innerHTML = `SQM: ${SQM}`;
+
   document.getElementById('SQMinfo').style.display = "block";
+
+
 }
 
 function search() {
@@ -160,7 +163,9 @@ function search() {
     },
     0
   )
+
     .to('.container', {'cursor': 'default', duration: 0.2, onStart: function disableslider(){container.style.pointerEvents = "none"}}, 0)
+
 
     .to(
       ".container",
@@ -277,8 +282,12 @@ function search() {
         },
       },
       11
+
     )
     .to('.container', {'cursor': 'grab', duration: 0.2, onComplete: function enableslider(){container.style.pointerEvents = "auto"}}, 11);
+
+    );
+
 
   setTimeout("addInfo()", 11000);
 }
