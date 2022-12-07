@@ -28,7 +28,14 @@ function loadMapScenario() {
     );
   });
   function selectedSuggestion(suggestionResult) {
-
+    /*map.entities.clear();
+        map.setView({ bounds: suggestionResult.bestView });
+        var pushpin = new Microsoft.Maps.Pushpin(suggestionResult.location);
+        map.entities.push(pushpin);
+        document.getElementById('printoutPanel').innerHTML =
+            
+                'Lat: ' + suggestionResult.location.longitude +
+                '<br> Lon: ' + suggestionResult.location.latitude;*/
     let coordinates = `${suggestionResult.location.longitude},${suggestionResult.location.latitude}`;
     console.log(coordinates);
 
@@ -41,7 +48,6 @@ function loadMapScenario() {
       const SQM = rawsqm.toFixed(2);
       return SQM;
     };
-
 
     getData().then((SQM) => {
       if (SQM < 18) {
@@ -57,6 +63,14 @@ function loadMapScenario() {
   }
 }
 
+// Making sure SQM mesurement doesn't go out of bounds in rare circumstances
+/* if (rawsqm < 18) {
+    sqm = 18;
+} else if (rawsqm > 22) {
+    sqm = 22 
+} else {
+    sqm = rawsqm
+} */
 
 // Set defult light pollution level
 overlay.style.setProperty(
@@ -134,10 +148,6 @@ function addInfo() {
   }
 
   document.getElementById("sqmValue").innerHTML = `SQM: ${SQM}`;
-
-  document.getElementById('SQMinfo').style.display = "block";
-
-
 }
 
 function search() {
@@ -163,10 +173,6 @@ function search() {
     },
     0
   )
-
-    .to('.container', {'cursor': 'default', duration: 0.2, onStart: function disableslider(){container.style.pointerEvents = "none"}}, 0)
-
-
     .to(
       ".container",
       { "--position": "0%", ease: Power3.easeInOut, duration: 1 },
@@ -282,12 +288,7 @@ function search() {
         },
       },
       11
-
-    )
-    .to('.container', {'cursor': 'grab', duration: 0.2, onComplete: function enableslider(){container.style.pointerEvents = "auto"}}, 11);
-
     );
-
 
   setTimeout("addInfo()", 11000);
 }
