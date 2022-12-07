@@ -499,6 +499,7 @@ li p {
         min-height: 100%;
         margin: 0;
         width: 100vw;
+        overflow: hidden;
     }    
 
     .footer{
