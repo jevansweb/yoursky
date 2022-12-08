@@ -642,6 +642,7 @@ li p {
     }
 
     .splashScreen {
+        display: none;
         padding: 20px;
     }
 
@@ -660,5 +661,9 @@ li p {
         margin-top: 15px;
         margin-bottom: 10px;
         cursor: pointer;
+    }
+
+    .blur {
+        display: none;
     }
 }
